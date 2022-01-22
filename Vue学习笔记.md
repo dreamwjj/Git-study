@@ -49,3 +49,8 @@ Vue之HelloWorld案例
 </html>
 ```
 
+### 2.模板语法
+
+#### v-bind 数据绑定 
+
+##### 	举例：v-bind:href =>:href
