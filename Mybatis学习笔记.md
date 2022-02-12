@@ -93,3 +93,72 @@ namespace中的包名要和Dao/mapper的包名一致。
 ## 6、万能的map
 
 假如，我们的实体类，或者数据库中的表，字段或者参数过多，我们应当考虑使用map
+
+## 7、配置解析
+
+### 7.1 核心配置文件
+
+#### 		mybatis-config.xml
+
+#### 		mybatis的配置文件包含了会深深影响Mybatis行为的设置和信息
+
+- configuration（配置）
+
+  - properties（属性）
+
+  - settings（设置）
+
+  - typeAliases（类型别名）
+
+  - typeHandlers（类型处理器）
+
+  - objectFactory（对象工厂）
+
+  - plugins（插件）
+
+  - environments（环境配置）
+
+    - environment（环境变量）
+      - transactionManager（事务管理器）
+      - dataSource（数据源）
+
+  - databaseIdProvider（数据库厂商标识）
+
+  - mappers（映射器）
+
+    
+
+### 7.2、环境配置（environments）
+
+Mybatis可以配置成适应多种环境
+
+不过要记住：尽管可以配置多个环境，但每个sqlsessionfactory实例只能选择一种环境
+
+mybatis默认的事务管理器就是JDBC，连接池：pooled
+
+### 7.3、属性（properties）
+
+我们可以通过properties属性来实现引用配置文件
+
+这些属性都是可外部配置且动态替换的，既可以在典型的java属性文件中配置，亦可通过properties元素的子元素来传递
+
+```xml
+<property name="driver" value="com.mysql.jdbc.Driver"/>
+<property name="url" value="jdbc:mysql://localhost:3306/basic?useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+<property name="username" value="root"/>
+<property name="password" value="123456"/>
+```
+
+### 7.4、别名
+
+-   类型别名是为java类型设置一个短的名字
+
+- 存在的意义仅在于用来减少类完全限定名的冗余
+
+  ```
+  <typeAliases>
+          <typeAlias type="cn.itcast.pojo.User" alias="User"/>
+  </typeAliases>
+  ```
+
+   
