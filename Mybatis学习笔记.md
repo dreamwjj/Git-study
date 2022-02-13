@@ -161,4 +161,55 @@ mybatis默认的事务管理器就是JDBC，连接池：pooled
   </typeAliases>
   ```
 
-   
+
+## 8、映射器（mappers）
+
+mapperregistry:注册绑定我们的mapper文件。
+
+方式一
+
+```
+<mappers>
+        <mapper resource="cn/itcast/dao/mapper/UserMapper.xml"/>
+</mappers>
+```
+
+方式二
+
+```
+<mappers>
+        <mapper class="cn.itcast.dao.UserDao"/>
+</mappers>
+```
+
+注意点：
+
+- 接口和它的mapper配置文件必须同名
+- 接口和它的mapper配置文件必须在同一个包下
+
+方式三
+
+```
+<mappers>
+        <package name="cn.itcast.dao"/>
+</mappers>
+```
+
+注意点：
+
+- 接口和它的mapper配置文件必须同名
+- 接口和它的mapper配置文件必须在同一个包下
+
+## 9、日志
+
+log4j使用步骤
+
+1. 导包
+2. 编写配置文件
+3. 使用
+
+## 10、分页
+
+mybatis分页插件，pagehelper
+
+分页插件学习地址：https://pagehelper.github.io/
